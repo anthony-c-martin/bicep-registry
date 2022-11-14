@@ -58,4 +58,6 @@ jobs:
 
       - name: Publish modules
         run: |
+          az bicep publish --file ./modules/bicep-on-k8s/main.bicep --target "br:${{ env.REGISTRY_NAME }}.azurecr.io/bicep-on-k8s:0.1"
           az bicep publish --file ./modules/empty/main.bicep --target "br:${{ env.REGISTRY_NAME }}.azurecr.io/empty:0.1"
+          az bicep publish --file ./modules/javascript/main.bicep --target "br:${{ env.REGISTRY_NAME }}.azurecr.io/javascript:0.1"
